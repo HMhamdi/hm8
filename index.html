@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرة ذاتية - Eng Hamdi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #a0522d;
+            --secondary-color-hover: #8b4513;
+            --background-image: url('https://c4.wallpaperflare.com/wallpaper/274/323/713/code-php-html-ilya-pavlov-wallpaper-preview.jpg');
+            --container-bg-color: rgba(211, 211, 211, 0.8);
+            --text-color: #333;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            background-image: var(--background-image);
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 360px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--container-bg-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transform: translateY(50px);
+            animation: slideUp 1s forwards 0.5s;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-left: 20px;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0%, 50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .header h1 {
+            margin: 0;
+            font-family: 'Amiri', serif;
+            font-size: 24px;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: slide 3s ease-in-out infinite;
+        }
+
+        @keyframes slide {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        .profile-pic, .interactive-pic {
+            width: 100px;
+            height: 150px;
+            border-radius: 20px;
+            border: 3px solid var(--border-color);
+            margin: 0 auto 20px auto;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+
+        .profile-pic:hover, .interactive-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-pic {
+            animation: float 2s ease-in-out infinite, fadeIn 2s forwards 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .contact-button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            transform: translateY(20px);
+            animation: slideUp 1s forwards 1s;
+        }
+
+        .contact-button:hover {
+            background-color: var(--secondary-color-hover);
+        }
+
+        p {
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1.5s;
+        }
+
+        .interactive-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: var(--container-bg-color);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s;
+        }
+
+        .features-section {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2.5s;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+
+        .feature-text {
+            font-size: 16px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 360px;
+            opacity: 0;
+            animation: fadeIn 2s forwards 3s;
+        }
+
+        footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        footer a:hover {
+            background-color: var(--border-color);
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: #fff;
+        }
+
+        .facebook-button {
+            background-color: #3b5998;
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 50%;
+                max-width: 800px;
+                margin: 50px auto;
+                padding: 40px;
+            }
+
+            .header {
+                justify-content: space-between;
+            }
+
+            .profile-pic, .interactive-pic {
+                width: 150px;
+                height: 200px;
+            }
+
+            .interactive-section {
+                padding: 40px;
+            }
+
+            footer {
+                width: 50%;
+                max-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="LOGO.jpg" alt="شعار الموقع">
+            <h1 id="eng-hamdi">ENG HAMDI</h1>
+        </div>
+        <div class="profile-section">
+            <img src="HM.jpg" alt="صورة المهندس حمدي" class="profile-pic">
+            <p>
+            </p>
+        </div>
+        <div class="interactive-section">
+            <img src="hamdi.jpg" alt="صورة تفاعلية 1" class="interactive-pic" onclick="playAudio('audio1')">
+            <img src="mohamed.jpg" alt="صورة تفاعلية 2" class="interactive-pic" onclick="playAudio('audio2')">
+            <img src="OIP.jpg" alt="صورة تفاعلية 3" class="interactive-pic" onclick="playAudio('audio3')">
+        </div>
+        <audio id="audio1" src="المهندس.mp3"></audio>
+        <audio id="audio2" src="العائله.mp3"></audio>
+        <audio id="audio3" src="فلسطين.mp3"></audio>
+        <div class="features-section">
+            <div class="feature">
+                <i class="fas fa-code feature-icon"></i>
+                <div class="feature-text">خبرة واسعة في لغات البرمجة الحديثة</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-lightbulb feature-icon"></i>
+                <div class="feature-text">حلول إبداعية ومبتكرة للمشكلات التقنية</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-users feature-icon"></i>
+                <div class="feature-text">العمل الجماعي والتعاون الفعّال</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-laptop-code feature-icon"></i>
+                <div class="feature-text">تطوير تطبيقات ويب تفاعلية وعالية الأداء</div>
+            </div>
+       
+    </div>
+    <script>
+        function playAudio(id) {
+            var audio = document.getElementById(id);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
